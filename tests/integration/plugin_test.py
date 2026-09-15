@@ -21,7 +21,10 @@ def test_plugin_metadata(app: App):
     expected_package = (
         Path(__file__).parents[2] / "src" / "nonebot_plugin_triage_help" / "__init__.py"
     )
-    assert Path(nonebot_plugin_triage_help.__file__).resolve() == expected_package.resolve()
+    assert (
+        Path(nonebot_plugin_triage_help.__file__).resolve()
+        == expected_package.resolve()
+    )
     assert isinstance(plugin_config, Config)
     assert template_demo is not None
 
